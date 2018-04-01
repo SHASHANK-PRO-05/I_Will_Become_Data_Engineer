@@ -31,6 +31,7 @@ The main thing is the concepts. So choose whatever tools you like and master tho
     - [ ] MongoDB
     - [ ] HBase
     - [ ] Cassandra
+    - [ ] MySQL - Any SQL DB (They aren't going anywhere)
 
 #### Analytics
 - Machine Learning Libraries
