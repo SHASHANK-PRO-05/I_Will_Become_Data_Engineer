@@ -1,5 +1,5 @@
 # All-Scala
-Things you need to know in your language to become a Data Engineer. I started my journey with scala. Feel free to use whatever language you prefer.
+Things you need to know in your language to become a Data Engineer. I started my journey with Scala. Feel free to use whatever language you prefer.
 
 ### Task List
 The main thing is the concepts. So choose whatever tools you like and master those concepts.
