@@ -6,7 +6,7 @@ The main thing is the concepts. So choose whatever tools you like and master tho
 
 #### The Software
 - Master these things
-    - [ ] Learn how to write README.md. This will make your life a lot easy
+    - [x] Learn how to write Markdown files. This will make your life a lot easy
     - [ ] Learn git
     - [ ] Git visualisation tools
     - [ ] Jekyll (Static Web Page Generator, for your resume)
