@@ -1,50 +1,42 @@
-import sys
-
-
 class Solution:
     def pushDominoes(self, dominoes):
-        """
-        :type dominoes: str
-        :rtype: str
-        """
+        ansStr = ''
         n = len(dominoes)
-        left = [sys.maxsize + 1] * n
-        right = [sys.maxsize + 1] * n
-        curRight = sys.maxsize + 1
-        curLeft = sys.maxsize + 1
-        for i in range(0, len(dominoes)):
+        listL = [n] * n
+        listR = [n] * n
+        prevL = n
+        prevR = n
+        for i in range(0, n):
             if dominoes[i] == 'R':
-                curRight = 0
-                right[i] = 0
+                listR[i] = 0
+                prevR = 0
             elif dominoes[i] == 'L':
-                curRight = sys.maxsize + 1
-                right[i] = sys.maxsize + 1
+                listR[i] = n
+                prevR = n
             else:
-                curRight = curRight + 1
-                right[i] = min(curRight, sys.maxsize + 1)
+                listR[i] = min(prevR + 1, n)
+                prevR = listR[i]
 
-        for j in range(len(dominoes) - 1, -1, -1):
-            if dominoes[j] == 'L':
-                curLeft = 0
-                left[j] = 0
-            elif dominoes[j] == 'R':
-                curLeft = sys.maxsize + 1
-                left[j] = sys.maxsize + 1
+        for i in range(n - 1, -1, -1):
+            if dominoes[i] == 'L':
+                listL[i] = 0
+                prevL = 0
+            elif dominoes[i] == 'R':
+                listL[i] = n
+                prevL = n
             else:
-                curLeft = curLeft + 1
-                left[j] = min(curLeft, sys.maxsize + 1)
-
-        list = [None] * n
+                listL[i] = min(prevL + 1, n)
+                prevL = listL[i]
 
         for i in range(0, n):
-            if left[i] < right[i]:
-                list[i] = 'L'
-            elif left[i] > right[i]:
-                list[i] = 'R'
+            if listL[i] > listR[i]:
+                ansStr += 'R'
+            elif listL[i] < listR[i]:
+                ansStr += 'L'
             else:
-                list[i] = dominoes[i]
-        return ''.join(x for x in list)
+                ansStr += '.'
+        return ansStr
 
 
 sol = Solution()
-print(sol.pushDominoes("LL.RR.LLRRLL.."))
+print(sol.pushDominoes("LL.R"))
