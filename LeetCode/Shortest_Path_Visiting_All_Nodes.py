@@ -1,39 +1,23 @@
-import sys
-
-
-class Solution:
+class Solution(object):
     def shortestPathLength(self, graph):
-        """
-        :type graph: List[List[int]]
-        :rtype: int
-        """
-        if len(graph) == 0:
-            return 0
-        self.graph = list(map(lambda x: set(x), graph))
-        self.visits = [0] * len(graph)
-        self.seti = set()
-        self.minLen = sys.maxsize
-        for i in range(0, len(graph)):
-            self.check(i, 0)
-        return self.minLen - 1
+        n = len(graph)
+        dist = [[float('inf')] * n for i in range(0, 1 << n)]
+        for x in range(0, n):
+            dist[1 << x][x] = 0
 
-    def check(self, node, thisLen):
+        for cover in range(0, 1 << n):
+            repeat = True
+            while repeat:
+                repeat = False
+                for head, d in enumerate(dist[cover]):
+                    for elem in graph[head]:
+                        cover2 = cover | 1 << elem
+                        if d + 1 < dist[cover2][elem]:
+                            dist[cover2][elem] = d + 1
+                            if cover2 == cover:
+                                repeat = True
 
-        if len(self.seti) == len(self.graph):
-            self.minLen = min(self.minLen, thisLen)
-            return
-        else:
-
-            for i in self.graph[node]:
-                if i not in self.seti:
-                    self.seti.add(i)
-                self.visits[i] += 1
-                self.graph[node].remove(i)
-                self.check(i, thisLen + 1)
-                self.graph[node].add(i)
-                self.visits[i] -= 1
-                if self.visits[i] == 0:
-                    self.seti.remove(i)
+        return min(dist[2 ** n - 1])
 
 
 sol = Solution()
