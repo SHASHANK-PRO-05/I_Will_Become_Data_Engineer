@@ -1,5 +1,5 @@
 # All-Scala
-Things you need to know in your language to become a Data Engineer. I started my journey with Scala. Feel free to use whatever language you prefer.
+This are the technolgies that I am aiming for to become a successful data engineer. If you have some recommendations for me please feel free to give me a pull request.
 
 ### Task List
 The main thing is the concepts. So choose whatever tools you like and master those concepts.
@@ -9,24 +9,25 @@ The main thing is the concepts. So choose whatever tools you like and master tho
     - [x] Learn how to write Markdown files. This will make your life a lot easy
     - [ ] Learn git
     - [ ] Git visualisation tools
-    - [ ] Jekyll (Static Web Page Generator, for your resume)
 - Learn Cloud Platforms
     - [ ] AWS
     - [ ] GCP
 - Foundations
     - [ ] Regex
     - [ ] Dynamic Programming
-    - [ ] Graph Algorithms
+    - [ ] Graph Algorithms - In-Progress
 - Contribution to the World
     - [ ] Atleast One Open Source Software Contributor.
 - Distributed Computing
-    - [ ] Akka
-    - [ ] Spark
-- REST API Frameworks
-    - [ ] Play 
+    - [ ] Kafka - In-Progress
+    - [ ] Spark - In-Progress
+- API Frameworks
+    - [ ] REST 
+    - [ ] GraphQL
 - Build Frameworks
     - [ ] SBT 
     - [ ] Learn Jenkins
+    - [ ] Learn Travis
 - DBs
     - [ ] MongoDB
     - [ ] HBase
@@ -36,6 +37,7 @@ The main thing is the concepts. So choose whatever tools you like and master tho
 #### Analytics
 - Machine Learning Libraries
     - [ ] DeepLearning4J
+    - [ ] TensorFlow - In-Progress
 - Visualisation Libraries
     - [ ] Plotly.js
  
