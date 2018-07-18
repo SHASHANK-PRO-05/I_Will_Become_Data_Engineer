@@ -33,7 +33,7 @@ if __name__ == '__main__':
     wget = ['wget']
     wget_options = ['-q0', '-', f"localhost:{port}/sqoop/version"]
 
-    status, output = subprocess.getoutput(''.join(cmd + ' ' for cmd in (sqoop2_command + options_start)))
+    status, output = subprocess.getstatusoutput(''.join(cmd + ' ' for cmd in (sqoop2_command + options_start)))
     if status != 0:
         print('Sqoop 2 server was not able to start')
         exit(1)
